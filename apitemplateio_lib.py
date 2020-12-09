@@ -47,3 +47,12 @@ class APITemplateIO:
         return None
 
 
+    def list_templates(self):
+        response = requests.get(
+            F"https://api.apitemplate.io/v1/list-templates",
+            headers = {"X-API-KEY": F"{self.api_key}"}
+        )
+        print(response.content)
+        resp_json = json.loads(response.content)
+
+        return resp_json

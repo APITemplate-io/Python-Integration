@@ -32,9 +32,15 @@ def test_account_information():
     apitemplate = APITemplateIO(api_key)
     print(apitemplate.get_account_information())
 
+def test_list_templates():
+    apitemplate = APITemplateIO(api_key)
+    templates = apitemplate.list_templates()
+    for t in templates:
+        print(t)
 
 if __name__ == "__main__":
     test_pdf()
     test_image()
     test_account_information()
+    test_list_templates()
 
